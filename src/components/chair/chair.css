@@ -1,0 +1,19 @@
+.puestogreen{
+    background-color: green;
+}
+.puestopurple{
+    background-color:  rgb(114, 5, 78);
+}
+
+.puestogray{
+    background-color:  rgb(82, 82, 82);
+}
+
+button{
+    width: 14%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    /*border: 1px solid white;*/
+    color: white;
+}

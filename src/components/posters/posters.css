@@ -1,0 +1,42 @@
+main{
+    margin: 50px;
+}
+
+h1{
+    margin-left: 10%;
+    color: black !important;
+}
+
+.poster-content{
+    width: 90%;
+    margin-left: 6%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.posters-card{
+    display: inline-block;
+    width: 22%;
+    margin-left: 2%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+    background-color: rgb(242, 241, 241);
+    /*box-shadow:0px 0px 30px 10px #dedede ;**/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.posters-card img{
+    width: 290px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.posters-card h3,h5{
+    margin-top: 8px;
+    margin-left: 15%;
+}
+
+.posters-card a{
+    color: white !important;
+}

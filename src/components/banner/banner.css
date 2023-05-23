@@ -1,0 +1,9 @@
+.banner{
+    background-image: url("../../../public/bannerok.jpg");
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+}
+
+  

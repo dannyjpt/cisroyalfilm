@@ -1,0 +1,17 @@
+
+.sala{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    justify-content: center;  
+}
+
+.bloqueb {
+    width: 30%;
+    margin-left: 4%;
+}
+
+.bloquea {
+    width: 30%;
+    margin-left: -2%;
+}
