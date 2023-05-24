@@ -59,9 +59,10 @@ class Login extends Component {
           } else if (response == "no email") {
             alert("El usuario o la contraseña no son correctos");
           } else {
+            console.log("info: "+response._id);
             const expirationTime = new Date();
             expirationTime.setHours(expirationTime.getHours() + 1);
-            cookies.set("id", response._id, {
+            cookies.set("pass", response._id, {
               path: "/",
               secure: true,
               expires: expirationTime,
