@@ -105,7 +105,7 @@ export function FilmDetail() {
       >
         <article className="ArticleDetail">
           <Link to={`/`}>
-            <img src={backButtonImage}></img>
+            <img  src={backButtonImage}></img>
           </Link>
           
           <h2>{detail.title}</h2>
