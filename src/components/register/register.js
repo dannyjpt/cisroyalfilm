@@ -19,7 +19,9 @@ class Register extends Component {
 
   getStudents = async (event) => {
     const selectedValue = event.target.value;
-
+  
+    this.setState({ value: selectedValue }); // Actualizar el estado con la categoría seleccionada
+  
     axios
       .get(`https://www.itechpro.tech/cinema/students/${selectedValue}`)
       .then((response) => {
@@ -169,19 +171,16 @@ class Register extends Component {
                           value={this.state.value}
                         >
                           <option key="First" value="First">
-                            Select a category
-                          </option>
-                          <option key="First" value="First">
                             First
                           </option>
                           <option key="Second" value="Second">
                             Second
                           </option>
                           <option key="Third-Fourth-1" value="Third-Fourth-1">
-                            Third - Fourth Pre-A1-G1, Pre-A1-G2 && A1-G1
+                            Third - Fourth Group-1
                           </option>
                           <option key="Third-Fourth-2" value="Third-Fourth-2">
-                            Third - Fourth A1-G2, A2-B1-B2-G1 && A2-B1-B2-G2
+                            Third - Fourth Group-2
                           </option>
                           <option key="Fifth-Sixth" value="Fifth-Sixth">
                             Fifth - Sixth
