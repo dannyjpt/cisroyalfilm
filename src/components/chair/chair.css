@@ -17,3 +17,15 @@ button{
     /*border: 1px solid white;*/
     color: white;
 }
+
+@media (max-width: 768px) {
+    button{
+        width: 15%;
+        padding: 1px;
+        margin: 1px;
+        border-radius: 10px;
+        /*border: 1px solid white;*/
+        color: white;
+        font-size: 11px;
+    }
+  }
