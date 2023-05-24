@@ -21,7 +21,7 @@ class Register extends Component {
     const selectedValue = event.target.value;
 
     axios
-      .get(`http://159.203.166.142/cinema/students/${selectedValue}`)
+      .get(`www.itechpro.tech/cinema/students/${selectedValue}`)
       .then((response) => {
         if (response.data.length > 0) {
           this.setState({ students: response.data }, () => {
@@ -59,7 +59,7 @@ class Register extends Component {
 
     try {
       const response = await axios.post(
-        "http://159.203.166.142/cinema/register/users",
+        "www.itechpro.tech/cinema/register/users",
         formObj
       );
       if (response.status === 200) {
