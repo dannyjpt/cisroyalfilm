@@ -62,6 +62,12 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
       }
     }
     if (!hasReservaCookie) {
+      setData({
+        category: cookies.get("category"),
+        chair: nomenclatura,
+        ide_user: cookies.get("pass"),
+        awards: false,
+      });
       // Hacer reserva
       try {
         const response = await axios.post(
@@ -97,7 +103,7 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
 
   const changeColor = ()=>{
     if (reservado) {
-      if (cookies.get("id") === numero) {
+      if (cookies.get("pass") === numero) {
         setUserColor("puestopurple");
       }else{
         setUserColor("puestogray");
@@ -111,7 +117,7 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
     setData({
       category: cookies.get("category"),
       chair: nomenclatura,
-      ide_user: cookies.get("id"),
+      ide_user: cookies.get("pass"),
       awards: cookies.get("hasAwards"),
     });
   }, [nomenclatura]);
