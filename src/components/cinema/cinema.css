@@ -15,3 +15,19 @@
     width: 30%;
     margin-left: -2%;
 }
+
+@media (max-width: 768px) {
+    .sala{
+        width: 100%;
+    }
+    
+    .bloqueb {
+        width: 49%;
+        margin-left: 1%;
+    }
+    
+    .bloquea {
+        width: 49%;
+        margin-left: 1%;
+    }
+  }
