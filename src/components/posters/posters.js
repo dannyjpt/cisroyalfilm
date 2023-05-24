@@ -36,12 +36,10 @@ export function Posters() {
         {
           films.map((film) => (
             <article className='posters-card' key={film.id}>
-                <br></br>
+              <br></br>
                 <center><img src={film.image }/></center>
                 <h3>{film.title}</h3>
                 <h5><strong>By</strong> {film.category}</h5>
-                <br></br>
-                <br></br>
                 <center><Link className="btn btn-success btn-lg"  to={`/details/${film.id}`} onClick={() => handleReserveClick(film.main_category)}>Details</Link></center>
                 <input type="hidden" value={film.id}></input>
                 <br></br>
