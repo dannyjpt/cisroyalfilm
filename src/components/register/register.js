@@ -16,6 +16,7 @@ class Register extends Component {
     value: "select",
     students: [],
   };
+  
 
   getStudents = async (event) => {
     const selectedValue = event.target.value;
@@ -72,13 +73,17 @@ class Register extends Component {
         } else if (response.data == "case3") {
           alert("El email ya está registrado");
         } else if (response.data == "Usuario registrado") {
-          cookies.set("name", formObj.user, { path: "/", secure: true });
-          cookies.set("email", formObj.email, { path: "/", secure: true });
+          /*const expirationTime = new Date();
+          expirationTime.setHours(expirationTime.getHours() + 1);
+          cookies.set("name", formObj.user, { path: "/", secure: true, expires: expirationTime, });
+          cookies.set("email", formObj.email, { path: "/", secure: true, expires: expirationTime, });
           cookies.set("category", formObj.category, {
             path: "/",
             secure: true,
+            expires: expirationTime,
           });
-          cookies.set("student", formObj.student, { path: "/" });
+          cookies.set("student", formObj.student, { path: "/", secure: true, expires: expirationTime, });
+          cookies.set("pass", formObj.password, { path: "/", secure: true, expires: expirationTime, });*/
           this.alert();
         }
       } else {
@@ -170,6 +175,9 @@ class Register extends Component {
                           onChange={this.getStudents}
                           value={this.state.value}
                         >
+                          <option>
+                            Select
+                          </option>
                           <option key="First" value="First">
                             First
                           </option>
