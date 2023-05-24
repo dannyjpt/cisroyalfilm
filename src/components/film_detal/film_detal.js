@@ -25,7 +25,7 @@ export function FilmDetail() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isCategory, setIsCategory] = useState(false);
   const { id_film } = useParams();
-  const URL = `http://159.203.166.142/cinema/films/details/${id_film}`;
+  const URL = `www.itechpro.tech/cinema/films/details/${id_film}`;
 
   const getData = async () => {
     if (URL === "") {
