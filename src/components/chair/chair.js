@@ -26,7 +26,7 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
       // Eliminar reserva
       try {
         const response = await axios.delete(
-          `http://159.203.166.142/cinema/booking/eliminar/${data.category}/${cookieUserReserva}`
+          `www.itechpro.tech/cinema/booking/eliminar/${data.category}/${cookieUserReserva}`
         );
         if (response.status === 200) {
           console.log("Reserva eliminada");
@@ -36,7 +36,7 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
           // Llamada a la función de reserva para reservar el nuevo puesto
           try {
             const response = await axios.post(
-              "http://159.203.166.142/cinema/register/booking",
+              "www.itechpro.tech/cinema/register/booking",
               data
             );
             if (response.status === 200) {
@@ -65,7 +65,7 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
       // Hacer reserva
       try {
         const response = await axios.post(
-          "http://159.203.166.142/cinema/register/booking",
+          "www.itechpro.tech/cinema/register/booking",
           data
         );
         if (response.status === 200) {
