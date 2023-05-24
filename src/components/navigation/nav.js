@@ -23,7 +23,7 @@ export function Navigation(){
 
   const handleLogout = () => {
     // Eliminar todas las cookies de sesión
-    cookies.remove("id");
+    cookies.remove("pass");
     cookies.remove("name");
     cookies.remove("email");
     cookies.remove("category");
