@@ -10,7 +10,7 @@ export function Posters() {
   const [films,setFilms] = useState([])
   
 
-    const URL = 'www.itechpro.tech/cinema/films'
+    const URL = 'https://www.itechpro.tech/cinema/films'
 
     const getData = async()=>{
         const response = await fetch(URL)
