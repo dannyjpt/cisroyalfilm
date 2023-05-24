@@ -17,7 +17,7 @@ const Booking = ({ location }) => {
 
   //console.log(localStorageTodos)
   const actualizarReservas = async () => {
-    fetch(`www.itechpro.tech/cinema/booking/category/${id_category}`)
+    fetch(`https://www.itechpro.tech/cinema/booking/category/${id_category}`)
       .then((response) => response.json())
       .then((data) => {
         setReservas(data);
@@ -87,7 +87,7 @@ const Booking = ({ location }) => {
         //actualizarReservas();
         console.log("id: "+cookies.get("id"));
         axios
-        .put('www.itechpro.tech/cinema/actualizar/booking', { id: cookies.get("id"), data: isChecked })
+        .put('https://www.itechpro.tech/cinema/actualizar/booking', { id: cookies.get("id"), data: isChecked })
           .then((response) => {
             console.log(response.data);
           })
@@ -106,7 +106,7 @@ const Booking = ({ location }) => {
         console.log("id: "+cookies.get("id"));
         cookies.set("hasAwards",false, { path: "/", secure: true });
         axios
-          .put('www.itechpro.tech/cinema/actualizar/booking', { id: cookies.get("id"), data: isChecked })
+          .put('https://www.itechpro.tech/cinema/actualizar/booking', { id: cookies.get("id"), data: isChecked })
           .then((response) => {
             console.log(response.data);
           })
