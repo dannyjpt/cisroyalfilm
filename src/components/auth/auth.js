@@ -47,7 +47,7 @@ class Login extends Component {
   iniciarSesion = async () => {
     await axios
       .get(
-        `http://159.203.166.142/cinema/login/${this.state.form.email}/${this.state.form.password}`
+        `www.itechpro.tech/cinema/login/${this.state.form.email}/${this.state.form.password}`
       )
       .then((response) => {
         return response.data;
