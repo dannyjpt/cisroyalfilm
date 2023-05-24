@@ -40,3 +40,19 @@ h1{
 .posters-card a{
     color: white !important;
 }
+
+@media (max-width: 768px) {
+    .posters-card {
+      width: 90%;
+      margin-left: 5%;
+    }
+    
+    .posters-card img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .posters-card h3, .posters-card h5 {
+      margin-left: 5%;
+    }
+  }
