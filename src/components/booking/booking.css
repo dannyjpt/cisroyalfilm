@@ -125,3 +125,26 @@ h2{
       clip-path: polygon(0 0, 100% 0, 100% 67%, 0 67%);
     }
   }
+
+  @media (max-width: 768px) {
+    .Book{
+      width: 100%;
+      border-radius: 0px;
+      display: block;
+  }
+
+  .options{
+    width: 100%;
+    display: block;
+  }
+
+  .awards{
+    width: 100%;
+    color: white;
+    font-size: 18px;
+  }
+
+  h2{
+    margin-top: 40px;
+  }
+  }
