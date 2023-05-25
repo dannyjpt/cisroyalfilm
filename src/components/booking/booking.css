@@ -34,15 +34,19 @@ h2{
     justify-content: left;
 }
 .awards{
-  width: 50%;
-  float: right;
+  width: 40%;
   color: white;
   font-size: 18px;
+  text-align: center;
 }
 
 .awards input{
   width: 20px;
   height: 20px;
+}
+
+.space{
+  width: 10%;
 }
 
 .options{
@@ -142,6 +146,10 @@ h2{
     width: 100%;
     color: white;
     font-size: 18px;
+  }
+
+  .space{
+    height: 20px;
   }
 
   h2{
