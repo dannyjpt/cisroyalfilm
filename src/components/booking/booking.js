@@ -56,17 +56,17 @@ const Booking = ({ location }) => {
       })
       .catch((error) => console.error(error));
 
-      /*fetch(`https://www.itechpro.tech/cinema/awards/amount/${id_category}`)
+      fetch(`https://www.itechpro.tech/cinema/awards/amount/${id_category}`)
       .then((response) => response.json())
-      .then((data) => {
+      .then((count) => {
 
-        if (data < cookies.get("awards_amount")) {
+        if (count < cookies.get("awards_amount")) {
           setCuposDisponibles(true);
         } else {
           setCuposDisponibles(false);
         }
       })
-      .catch((error) => console.error(error));*/
+      .catch((error) => console.error(error));
   };
   useEffect(() => {
     actualizarReservas();
