@@ -36,6 +36,13 @@ export function FilmDetail() {
       console.log(data);
       setDetail(data);
       localStorage.setItem("title", data.title);
+      const expirationTime = new Date();
+            expirationTime.setHours(expirationTime.getHours() + 1);
+            cookies.set("awards_time", data.awards_time, {
+              path: "/",
+              secure: true,
+              expires: expirationTime,
+            });
     }
   };
 
