@@ -55,7 +55,7 @@ export function Navigation(){
             <Link to="/login">Login</Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to="/register">Sing In</Link> 
+            <Link to="/register">Register</Link> 
           </Nav.Item>
         </>
       )}
