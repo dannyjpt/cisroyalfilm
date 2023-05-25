@@ -11,9 +11,11 @@ const cookies = new Cookies();
 const Booking = ({ location }) => {
   const navigate = useNavigate();
   const [reservas, setReservas] = useState([]);
+  const [award_time, setAwardTime] = useState([]);
   const { id_category } = useParams();
   const localStorageTitle = localStorage.getItem("title");
   const [isChecked, setIsChecked] = useState(false);
+
 
   //console.log(localStorageTodos)
   const actualizarReservas = async () => {
@@ -54,6 +56,10 @@ const Booking = ({ location }) => {
   };
   useEffect(() => {
     actualizarReservas();
+  }, []);
+
+  useEffect(() => {
+    setAwardTime(cookies.get("awards_time"));
   }, []);
 
   const handleReserveClick = (seat) => {
@@ -141,7 +147,9 @@ const Booking = ({ location }) => {
               Selected <button style={estilo3}></button>
             </h5>
           </div>
+          <div className="space"></div>
           <div className="awards">
+          <label className="awards_time">Time: {award_time}</label>
             <label>
             Stay for Awards Ceremony
             <br></br>
