@@ -32,6 +32,8 @@ export function Navigation(){
     cookies.remove("student");
     cookies.remove("hasAwards");
     cookies.remove("hasReserva"); // Agregar esta línea para eliminar la cookie 'hasReserva'
+    cookies.remove("awards_time");
+    cookies.remove("awards_amount");
     setIsLoggedIn(false);
   };
 
@@ -53,7 +55,7 @@ export function Navigation(){
             <Link to="/login">Login</Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to="/register">Register</Link> 
+            <Link to="/register">Sing In</Link> 
           </Nav.Item>
         </>
       )}
