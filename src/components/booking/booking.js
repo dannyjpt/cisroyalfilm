@@ -56,7 +56,7 @@ const Booking = ({ location }) => {
       })
       .catch((error) => console.error(error));
 
-      fetch(`https://www.itechpro.tech/cinema/awards/amount/${id_category}`)
+      /*fetch(`https://www.itechpro.tech/cinema/awards/amount/${id_category}`)
       .then((response) => response.json())
       .then((data) => {
 
@@ -66,7 +66,7 @@ const Booking = ({ location }) => {
           setCuposDisponibles(false);
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error));*/
   };
   useEffect(() => {
     actualizarReservas();
