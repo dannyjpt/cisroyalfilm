@@ -186,7 +186,7 @@ const Booking = ({ location }) => {
           />
         </label>
       ) : (
-        <label>&nbsp; Awards Ceremony Not available</label>
+        <label>&nbsp; All Award Ceremony Seats Already Reserved</label>
       )}
     </div>
         </div>
