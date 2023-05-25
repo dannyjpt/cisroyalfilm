@@ -22,45 +22,7 @@ export const Chair = ({ id, numero, idChair, nomenclatura, reservado, actualizar
     const hasReservaCookie = cookies.get("hasReserva") === "true";
     const cookieUserReserva = cookies.get("nomenclatura");
     console.log("user reserva " + cookieUserReserva);
-    if (hasReservaCookie) {
-      // Eliminar reserva
-      try {
-        const response = await axios.delete(
-          `https://www.itechpro.tech/cinema/booking/eliminar/${data.category}/${cookieUserReserva}`
-        );
-        if (response.status === 200) {
-          console.log("Reserva eliminada");
-          setHasReserva(false);
-          cookies.set("hasReserva", "false", { path: '/', secure: true });
- 
-          // Llamada a la función de reserva para reservar el nuevo puesto
-          try {
-            const response = await axios.post(
-              "https://www.itechpro.tech/cinema/register/booking",
-              data
-            );
-            if (response.status === 200) {
-              setData(response.data);
-              setHasReserva(true);
-              cookies.set("hasReserva", "true", { path: '/', secure: true });
-              alert()
-              actualizarReservas();
-              //window.location.href = `./${data.category}`;
-            } else {
-              alert("Error al intentar reservar");
-            }
-          } catch (error) {
-            console.error(error);
-            alert("Ha ocurrido un error al registrar el usuario");
-          }
-        } else {
-          alert("Error al intentar eliminar la reserva");
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Ha ocurrido un error al eliminar la reserva");
-      }
-    }
+    
     if (!hasReservaCookie) {
       setData({
         category: cookies.get("category"),
