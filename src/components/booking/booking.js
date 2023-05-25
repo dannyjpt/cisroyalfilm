@@ -5,6 +5,7 @@ import "./booking.css";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import Swal from "sweetalert2";
+import backButtonImage from "../film_detal/back-button.png";
 
 const cookies = new Cookies();
 
@@ -15,6 +16,7 @@ const Booking = ({ location }) => {
   const { id_category } = useParams();
   const localStorageTitle = localStorage.getItem("title");
   const [isChecked, setIsChecked] = useState(false);
+  const [cuposDisponibles, setCuposDisponibles] = useState(true);
 
 
   //console.log(localStorageTodos)
@@ -53,6 +55,18 @@ const Booking = ({ location }) => {
         }
       })
       .catch((error) => console.error(error));
+
+      fetch(`https://www.itechpro.tech/cinema/awards/amount/${id_category}`)
+      .then((response) => response.json())
+      .then((data) => {
+
+        if (data < cookies.get("awards_amount")) {
+          setCuposDisponibles(true);
+        } else {
+          setCuposDisponibles(false);
+        }
+      })
+      .catch((error) => console.error(error));
   };
   useEffect(() => {
     actualizarReservas();
@@ -65,6 +79,10 @@ const Booking = ({ location }) => {
   const handleReserveClick = (seat) => {
     // Do something with the selected seat
     navigate("/confirmation", { state: { seat } });
+  };
+
+  const handleGoBack = () => {
+    navigate(-1); // Regresar a la ruta anterior
   };
 
   const estilo1 = {
@@ -128,6 +146,7 @@ const Booking = ({ location }) => {
 
   return (
     <div className="Booking">
+      <button className="backb" onClick={handleGoBack}><img  src={backButtonImage}></img></button> {/* Botón de regreso */}
       <center>
         <h1 className="glitch" id="glitch-title">
           {localStorageTitle}
@@ -149,17 +168,27 @@ const Booking = ({ location }) => {
           </div>
           <div className="space"></div>
           <div className="awards">
-          <label className="awards_time">Time: {award_time}</label>
-            <label>
-            Stay for Awards Ceremony
-            <br></br>
-              <input className="boxl"
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
-            </label>
-          </div>
+      
+      {cuposDisponibles ? (
+        <label className="awards_time">Time: {award_time}</label>
+      ) : (
+        <label>&nbsp; </label>
+      )}
+      {cuposDisponibles ? (
+        <label>
+          Stay for Awards Ceremony
+          <br></br>
+          <input
+            className="boxl"
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+          />
+        </label>
+      ) : (
+        <label>&nbsp; Awards Ceremony Not available</label>
+      )}
+    </div>
         </div>
         <br></br>
       </center>
