@@ -1,0 +1,48 @@
+.results-container {
+    margin: auto;
+  width: 90%;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+.results-table-container {
+  width: 50%; /* Modifica el ancho según tus necesidades */
+}
+
+.results-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.results-table th {
+  background-color: #f2f2f2;
+}
+
+.table-title {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
+
+.table-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2{
+    font-size: 20px;
+    color: black;
+}
+.space{
+    width: 5%;
+}
