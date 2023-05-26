@@ -11,7 +11,7 @@ const Results = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const categoryValue = selectedCategory || "";
-
+ 
   useEffect(() => {
     if (selectedCategory) {
       axios
