@@ -23,7 +23,7 @@ const Results = () => {
           setReservations(data.reservations);
           setUsers(data.awardUsers);
 
-          const filteredUsers = data.users.filter((user) => {
+          const filteredUsers = data.awardUsers.filter((user) => {
             return data.reservations.some(
               (reservation) =>
                 reservation.ide_user === user._id && reservation.awards === true
