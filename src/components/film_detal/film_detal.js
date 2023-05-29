@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import Cookies from "universal-cookie";
 import backButtonImage from "./back-button.png";
 
-const cookies = new Cookies();
+const cookies = new Cookies(); 
 
 export function FilmDetail() {
   /*const localStorageTodos = localStorage.getItem('key');
