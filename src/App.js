@@ -15,16 +15,11 @@ function App() {
     <Routes>
       <Route path='/' element={
         <>
-          <Navigation/>
           <Banner/>
           <Posters/>
         </>
       }/>
-      <Route path='/register' element={<><Navigation/><Register/></>}></Route>
-      <Route path='/login' element={<><Navigation/><Login/></>}></Route>
-      <Route path='/details/:id_film' element={<><Navigation/><FilmDetail/></>}></Route>
-      <Route path='/booking/:id_category' element={<Booking/>}></Route>
-      <Route path='/results' element={<Results/>}></Route>
+      <Route path='/details/:id_film' element={<><FilmDetail/></>}></Route>
     </Routes>
   );
 }
