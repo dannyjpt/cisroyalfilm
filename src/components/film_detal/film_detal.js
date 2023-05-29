@@ -128,7 +128,6 @@ export function FilmDetail() {
           <p>
             {detail.description}
           </p>
-          <h5>Hour: {detail.Time}</h5>
           <br></br>
           <Link className="btn btn-danger btn-lg">
               Watch Movie
