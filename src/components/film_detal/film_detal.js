@@ -130,37 +130,9 @@ export function FilmDetail() {
           </p>
           <h5>Hour: {detail.Time}</h5>
           <br></br>
-          {isLoggedIn ? (
-            userEmail === "dpuerta27@gmail.com" ? (
-              <Link
-                className="btn btn-danger btn-lg"
-                to={{
-                  pathname: `/booking/${detail.main_category}`,
-                  state: `${detail}`,
-                }}
-              >
-                Reserve
-              </Link>
-            ) : isCategory ? (
-              <Link className="btn btn-danger btn-lg" onClick={alert2}>
-                Reserve
-              </Link>
-            ) : (
-              <Link
-                className="btn btn-danger btn-lg"
-                to={{
-                  pathname: `/booking/${detail.main_category}`,
-                  state: `${detail}`,
-                }}
-              >
-                Reserve
-              </Link>
-            )
-          ) : (
-            <Link className="btn btn-danger btn-lg" onClick={alert}>
-              Reserve
+          <Link className="btn btn-danger btn-lg">
+              Watch Movie
             </Link>
-          )}
           <br></br>
           <br></br>
         </article>
