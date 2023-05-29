@@ -24,6 +24,7 @@ export function FilmDetail() {
   const [detail, setDetail] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isCategory, setIsCategory] = useState(false);
+  const [userEmail, setUserEmail] = useState(cookies.get("email"));
   const { id_film } = useParams();
   const URL = `https://www.itechpro.tech/cinema/films/details/${id_film}`;
 
@@ -130,7 +131,17 @@ export function FilmDetail() {
           <h5>Hour: {detail.Time}</h5>
           <br></br>
           {isLoggedIn ? (
-            isCategory ? (
+            userEmail === "dpuerta27@gmail.com" ? (
+              <Link
+                className="btn btn-danger btn-lg"
+                to={{
+                  pathname: `/booking/${detail.main_category}`,
+                  state: `${detail}`,
+                }}
+              >
+                Reserve
+              </Link>
+            ) : isCategory ? (
               <Link className="btn btn-danger btn-lg" onClick={alert2}>
                 Reserve
               </Link>
