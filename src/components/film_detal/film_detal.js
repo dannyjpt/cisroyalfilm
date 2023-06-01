@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./film_detail.css";
 import Swal from "sweetalert2";
 import Cookies from "universal-cookie";
 import backButtonImage from "./back-button.png";
 
-const cookies = new Cookies(); 
+
+
+const cookies = new Cookies();
 
 export function FilmDetail() {
+  const playerRef = useRef(null);
   /*const localStorageTodos = localStorage.getItem('key');
     
     let URL = ""
@@ -38,17 +41,17 @@ export function FilmDetail() {
       setDetail(data);
       localStorage.setItem("title", data.title);
       const expirationTime = new Date();
-            expirationTime.setHours(expirationTime.getHours() + 1);
-            cookies.set("awards_time", data.awawards_time, {
-              path: "/",
-              secure: true,
-              expires: expirationTime,
-            });
-            cookies.set("awards_amount", data.awards_amount, {
-              path: "/",
-              secure: true,
-              expires: expirationTime,
-            });
+      expirationTime.setHours(expirationTime.getHours() + 1);
+      cookies.set("awards_time", data.awawards_time, {
+        path: "/",
+        secure: true,
+        expires: expirationTime,
+      });
+      cookies.set("awards_amount", data.awards_amount, {
+        path: "/",
+        secure: true,
+        expires: expirationTime,
+      });
     }
   };
 
@@ -94,14 +97,13 @@ export function FilmDetail() {
     }
 
     if (cookies.get("category") != cookies.get("mainCategory")) {
-        setIsCategory(true);
-        console.log(isCategory);
-      } else {
-        setIsCategory(false);
-        //console.log("nothing");
-      }
+      setIsCategory(true);
+      console.log(isCategory);
+    } else {
+      setIsCategory(false);
+      //console.log("nothing");
+    }
   };
-
 
   useEffect(() => {
     getData();
@@ -111,30 +113,47 @@ export function FilmDetail() {
 
   return (
     <main>
-
       <div
         style={{ backgroundImage: `url(${detail.image})` }}
         className="PosterDetail"
       >
         <article className="ArticleDetail">
           <Link to={`/`}>
-            <img  src={backButtonImage}></img>
+            <img src={backButtonImage}></img>
           </Link>
-          
+
           <h2>{detail.title}</h2>
           <h5>
             <strong>By</strong> {detail.category}
           </h5>
-          <p>
-            {detail.description}
-          </p>
+          <p>{detail.description}</p>
           <br></br>
           <Link className="btn btn-danger btn-lg">
-              Watch Movie
-            </Link>
+            Watch Movie
+          </Link>
           <br></br>
           <br></br>
         </article>
+        <div className="VideoContainer">
+        <div
+          style={{ padding: "56.25% 0 0 0", position: "relative" }}
+          className="VideoWrapper"
+        >
+          <iframe
+            src={`${detail.trailer}?autoplay=1`}
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          ></iframe>
+        </div>
+      </div>
       </div>
     </main>
   );
