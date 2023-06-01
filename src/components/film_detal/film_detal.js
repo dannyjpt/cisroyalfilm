@@ -135,6 +135,7 @@ export function FilmDetail() {
           <br></br>
         </article>
         <div className="VideoContainer">
+        <center><h2>Trailer</h2></center>
         <div
           style={{ padding: "56.25% 0 0 0", position: "relative" }}
           className="VideoWrapper"
