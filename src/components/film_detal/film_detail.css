@@ -1,69 +1,96 @@
-main{
+main {
     margin: 0;
 }
-
-::-webkit-scrollbar {
-    display: none;
-    }
-
-.PosterDetail{
+.PosterDetail {
     width: 100%;
     height: 100vh;
     background-size: cover;
-    overflow-y: scroll;
-}
-
-.ArticleDetail{
-    height: calc(100vh - 80px);
+  }
+  
+  .ArticleDetail {
+    height: 100vh;
     padding: 20px 50px;
-    margin-top: 80px;
-    display: inline-block;
-    width: 50%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
-    overflow-y: scroll;
-}
-
-.ArticleDetail h2{
+  }
+  
+  .ArticleDetail h2 {
     margin-top: 50px;
-}
-
-.ArticleDetail p{
+  }
+  
+  .ArticleDetail p {
     margin-left: 0px;
-}
-
-.ArticleDetail a{
+  }
+  
+  .ArticleDetail a {
     text-decoration: none;
     color: white;
-}
+  }
 
-.swal2-actions{
+  .VideoContainer {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .VideoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+  
+  .VideoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .swal2-actions {
     width: 80%;
-}
-
-.swal2-styled.swal2-confirm, .swal2-styled.swal2-deny, .swal2-styled.swal2-cancel  {
+  }
+  
+  .swal2-styled.swal2-confirm,
+  .swal2-styled.swal2-deny,
+  .swal2-styled.swal2-cancel {
     width: auto;
     text-align: center;
     margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    .ArticleDetail{
-        padding: 20px 50px;
-        margin-top: 80px;
-        display: inline-block;
-        width: 100%;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.7);
-        font-size: 14px;
+  }
+  
+  @media (min-width: 769px) {
+    .ArticleDetail {
+      width: 60%;
     }
-
-    .ArticleDetail h2{
-        margin-top: 15px;
-    }
-
-    .ArticleDetail img{
-        margin-top: -10px;
-        width: 50px;
+  
+    .PosterDetail {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
   }
+  
+  @media (max-width: 768px) {
+    .ArticleDetail {
+      padding: 20px;
+      width: 100%;
+      font-size: 14px;
+      margin-top: 0;
+    }
+  
+    .ArticleDetail h2 {
+      margin-top: 15px;
+    }
+  
+    .ArticleDetail img {
+      margin-top: -10px;
+      width: 50px;
+    }
+  }
+  
