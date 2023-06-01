@@ -6,4 +6,9 @@
     background-position: center;
 }
 
+@media (max-width: 768px) {
+.banner{
+    height: 400px;
+}
+  }
   
