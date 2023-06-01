@@ -7,7 +7,7 @@ import Cookies from "universal-cookie";
 import backButtonImage from "./back-button.png";
 
 
-
+ 
 const cookies = new Cookies();
 
 export function FilmDetail() {
