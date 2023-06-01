@@ -64,7 +64,7 @@ main {
     margin-bottom: 20px;
   }
   
-  @media (min-width: 769px) {
+ @media (min-width: 769px) {
     .ArticleDetail {
       width: 60%;
     }
@@ -74,6 +74,10 @@ main {
       justify-content: flex-end;
       align-items: center;
     }
+
+    .VideoContainer {
+    width: 90%;
+  }
   }
   
   @media (max-width: 768px) {
@@ -92,5 +96,11 @@ main {
       margin-top: -10px;
       width: 50px;
     }
+
+    .VideoContainer {
+    width: 90%;
+    padding: 0px;
+    margin: auto;
+    padding-bottom: 30px;
   }
-  
+  }
