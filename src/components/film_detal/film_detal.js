@@ -129,7 +129,7 @@ export function FilmDetail() {
           </h5>
           <p>{detail.description}</p>
           <br></br>
-          <Link className="btn btn-danger btn-lg">
+          <Link className="btn btn-danger btn-lg" to={`/film`}>
             Watch Movie
           </Link>
           <br></br>
