@@ -7,7 +7,7 @@ import Cookies from "universal-cookie";
 import backButtonImage from "./back-button.png";
 
 
-  
+
 const cookies = new Cookies();
 
 export function FilmDetail() {
@@ -105,12 +105,6 @@ export function FilmDetail() {
       //console.log("nothing");
     }
   };
-  
-  /*
-<Link className="btn btn-danger btn-lg" to={`/film`}>
-            Watch Movie
-          </Link>
-*/
 
   useEffect(() => {
     getData();
