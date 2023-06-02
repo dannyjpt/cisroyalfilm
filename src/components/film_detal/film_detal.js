@@ -110,7 +110,7 @@ export function FilmDetail() {
     getData();
     verify();
   }, []);
-  //<Link className="btn btn-danger btn-lg" to={`/booking/${detail.main_category}, film:{}`}>Reserve</Link>
+  //to={`/film`}
 
   return (
     <main>
@@ -129,7 +129,7 @@ export function FilmDetail() {
           </h5>
           <p>{detail.description}</p>
           <br></br>
-          <Link className="btn btn-danger btn-lg" to={`/film`}>
+          <Link className="btn btn-danger btn-lg" >
             Watch Movie
           </Link>
           <br></br>
