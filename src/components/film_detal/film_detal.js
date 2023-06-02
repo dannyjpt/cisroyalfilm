@@ -40,6 +40,7 @@ export function FilmDetail() {
       console.log(data);
       setDetail(data);
       localStorage.setItem("title", data.title);
+      localStorage.setItem("filmVideo", data.video);
       const expirationTime = new Date();
       expirationTime.setHours(expirationTime.getHours() + 1);
       cookies.set("awards_time", data.awawards_time, {
@@ -104,6 +105,12 @@ export function FilmDetail() {
       //console.log("nothing");
     }
   };
+  
+  /*
+<Link className="btn btn-danger btn-lg" to={`/film`}>
+            Watch Movie
+          </Link>
+*/
 
   useEffect(() => {
     getData();
@@ -128,23 +135,20 @@ export function FilmDetail() {
           </h5>
           <p>{detail.description}</p>
           <br></br>
-          <Link className="btn btn-danger btn-lg">
+          <Link className="btn btn-danger btn-lg" to={`/film`}>
             Watch Movie
           </Link>
           <br></br>
           <br></br>
         </article>
         <div className="VideoContainer">
-        <center><h2>Trailer</h2></center>
+          <center><h2>Trailer</h2></center>
         <div
           style={{ padding: "56.25% 0 0 0", position: "relative" }}
           className="VideoWrapper"
         >
           <iframe
-            src={`${detail.trailer}?autoplay=1`}
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
+            src={`${detail.trailer}`}
             style={{
               position: "absolute",
               top: 0,
