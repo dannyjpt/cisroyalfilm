@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import './film.css';
+import introSound from '../../assets/intro.mp3';
 
 export const Film = () => {
   const playerRef = useRef(null);
+  const introSoundRef = useRef(null);
   const localStorageVideo = localStorage.getItem("filmVideo");
 
   useEffect(() => {
@@ -37,9 +39,16 @@ export const Film = () => {
       }
     };
 
+    const playIntroSound = () => {
+      console.log("repoduciendo");
+      introSoundRef.current.play(); // Reproduce el sonido de introducción
+    };
+
     handleResize();
 
     window.addEventListener('resize', handleResize);
+
+    playIntroSound();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -48,8 +57,14 @@ export const Film = () => {
 
   return (
     <div className="film-wrapper">
+      {/* Agrega el elemento de audio para el sonido de introducción */}
+      <audio ref={introSoundRef} preload="auto">
+  <source src={introSound} type="audio/mpeg" />
+</audio>
+
+ 
       <iframe
-        src={localStorageVideo}
+        src={localStorageVideo} 
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
